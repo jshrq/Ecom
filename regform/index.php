@@ -153,8 +153,7 @@
 
         <main>
             <section>
-                
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                <form action="form.php" method="POST">
                     <h2>Student Name</h2>
                     <input class="input" type="text" name="fname" placeholder="First Name" required>
                     <input class="input" type="text" name="lname" placeholder="Last Name" required>
@@ -169,42 +168,44 @@
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
-                    <input class="input" type="text" id="email" name="email" placeholder="ex: juandelacruz@gmail.com" required>
+                    <input class="input" type="email" name="email" placeholder="ex: juandelacruz@gmail.com" required>
 
                     <div class="row2">
                         <h2>Student ID</h2>
                         <h2>List of Classes</h2>
                     </div>
 
-                    <input class="input" type="text" name="id" placeholder="" required>
+                    <input class="input" type="text" name="id" placeholder="Student ID" required>
                     <select class="input" name="classes" required>
                         <option value="">Please select</option>
                         <option value="Math">Math</option>
                         <option value="Science">Science</option>
                     </select>
 
+                    <h2>Student No.</h2>
+                    <input class="input" type="text" name="studno" placeholder="Student No." required>
+                    <h2>Middle Name</h2>
+                    <input class="input" type="text" name="mname" placeholder="Middle Name" required>
+                    <h2>Address</h2>
+                    <input class="input" type="text" name="address" placeholder="Address" required>
+                    <h2>Contact No.</h2>
+                    <input class="input" type="text" name="contact" placeholder="Contact No." required>
+                    <h2>Birthday</h2>
+                    <input class="input" type="date" name="bday" placeholder="Birthdate" required>
+                    <h2>Age</h2>
+                    <input class="input" type="text" name="age" placeholder="Age" required>
+                    <h2>Religion</h2>
+                    <input class="input" type="text" name="rel" placeholder="Religion" required>
+                    <h2>Username</h2>
+                    <input class="input" type="text" name="uname" placeholder="Username" required>
+                    <h2>Password</h2>
+                    <input class="input" type="password" name="pw" placeholder="Password" required>
+                    <h2>Confirm Password</h2>
+                    <input class="input" type="password" name="cpw" placeholder="Confirm Password" required>
+
                     <button class="button" type="submit">Submit</button>
 
                 </form>
-
-                <?php
-                    if($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $fname = $_POST['fname'];
-                        $lname = $_POST['lname'];
-                        $gender = $_POST['gender'];
-                        $email = $_POST['email'];
-                        $id = $_POST['id'];
-                        $classes = $_POST['classes'];
-
-                        echo "First Name: $fname<br>";
-                        echo "Last Name: $lname<br>";
-                        echo "Gender: $gender<br>";
-                        echo "Student Email: $email<br>";
-                        echo "Student ID: $id<br>";
-                        echo "List of Classes: $classes<br>";
-
-                    }
-                ?> 
             </section>
         </main>
 
