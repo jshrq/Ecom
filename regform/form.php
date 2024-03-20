@@ -49,10 +49,12 @@
             } else echo "Password does match. Please try again.";
             
             
-            // if ($uname != "SELECT * FROM student_table WHERE Username") {
-            //     mysqli_query($conn, $uname);
-            //     echo "Username available.";
-            // } else echo "Username not available.";
-                                  
+            $database = "SELECT * FROM student_table WHERE Username='$uname'";
+            $result = mysqli_query($conn, $database);
+            if (mysqli_num_rows($result) == 1){
+                echo "Username available.";
+            }
+            else echo "Username not available.";
+                           
         }             
 ?> 
