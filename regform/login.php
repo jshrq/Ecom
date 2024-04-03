@@ -150,12 +150,16 @@
 </style>
 
 <body>
+    <?php
+      $_SESSION["username"] = $uname;
+      
+    ?>
     <div class="container">
             <header>
                 <img src="<?php echo "rc.png"; ?>" alt="logo">
                 <h1>Welcome</h1>
             </header>
-
+    
             <main>
                 <section>
                     <form action="form.php" method="POST">
@@ -166,12 +170,22 @@
                         <input class="input" type="text" name="uname" placeholder="Username" required>
                         <input class="input" type="password" name="pw" placeholder="Password" required>
                         
+                        <?php
+                              $database = "SELECT * FROM student_table WHERE Username='$uname'";
+                              $result = mysqli_query($conn, $database);
+                              if (mysqli_num_rows($result) == 0){
+                                
+                              } else echo "Username not found.";
+                            
+                            ?>
+
                         <a href='form.php'><button class="button" type="submit">Login</button></a>
                         <a href='signup.php'><button class="button button1" type="button">Signup</button></a>
 
                     </form>
                 </section>
             </main>
+    
 
             <footer>
                 <p>&copy; 2024 Joshua Roque</p>

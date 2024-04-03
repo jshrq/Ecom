@@ -152,7 +152,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $database = "student_table";
+        $database = "firstconnection";
         $conn = new mysqli($servername, $username, $password, $database);
 
             if($_SERVER["REQUEST_METHOD"] == "POST") {
