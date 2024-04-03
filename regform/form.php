@@ -148,7 +148,7 @@
 
 <body>
     <?php
-        $_SESSION["username"] = $uname;
+        // $_SESSION["username"] = $uname;
         $servername = "localhost";
         $username = "root";
         $password = "";

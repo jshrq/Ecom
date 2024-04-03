@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include('connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -150,39 +151,35 @@
 </style>
 
 <body>
-    <?php
-      $_SESSION["username"] = $uname;
-      
-    ?>
+    <!-- <?php
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $database = "firstconnection";
+      $conn = new mysqli($servername, $username, $password, $database);
+    ?> -->
     <div class="container">
             <header>
                 <img src="<?php echo "rc.png"; ?>" alt="logo">
                 <h1>Welcome</h1>
             </header>
+            <?php
+                if (isset($_SESSION['login_error'])) {
+                    echo "<p class='error'>{$_SESSION['login_error']}</p>";
+                    unset($_SESSION['login_error']);
+                }
+                ?>
     
             <main>
                 <section>
-                    <form action="form.php" method="POST">
-                        <div class="row">
-                            <h2>Username</h2>
-                            <h2>Password</h2>
-                        </div>
-                        <input class="input" type="text" name="uname" placeholder="Username" required>
+                    <form action="process_login.php" method="POST">
+                        
+                        <input class="input" type="text" name="uname" placeholder="Username" required><br>
                         <input class="input" type="password" name="pw" placeholder="Password" required>
                         
-                        <?php
-                              $database = "SELECT * FROM student_table WHERE Username='$uname'";
-                              $result = mysqli_query($conn, $database);
-                              if (mysqli_num_rows($result) == 0){
-                                
-                              } else echo "Username not found.";
-                            
-                            ?>
-
-                        <a href='form.php'><button class="button" type="submit">Login</button></a>
-                        <a href='signup.php'><button class="button button1" type="button">Signup</button></a>
-
+                        <button class="button" type="submit">Login</button>
                     </form>
+                    <a href='signup.php'><button class="button button1" type="button">Signup</button></a>
                 </section>
             </main>
     
