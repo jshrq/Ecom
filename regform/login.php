@@ -25,7 +25,7 @@
                         <input class="input" type="text" name="uname" placeholder="Username" required><br>
                         <input class="input" type="password" name="pw" placeholder="Password" required><br>
                         
-                        <button class="button" type="submit">Login</button>
+                        <br><button class="button" type="submit">Login</button>
                     </form>
                     <br><a href='signup.php'><button class="button button1" type="button">Sign Up</button></a>
                 </section>
@@ -36,5 +36,4 @@
             </footer>
         </div>
 </body>
-
 </html>

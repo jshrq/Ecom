@@ -28,7 +28,7 @@
             echo "Last Name: ", $row ['Last_Name']. "<br>";
             echo "Address: ", $row ['Address']. "<br>";
             echo "Gender: ", $row ['Gender']. "<br>";
-            echo "Student Email: ", $row ['Email_Address']. "<br>";
+            echo "Email: ", $row ['Email_Address']. "<br>";
             echo "Birthdate: ", $row ['Birthday']. "<br>";
             echo "Age: ", $row ['Age']. "<br>";
             echo "Religion: ", $row ['Religion']. "<br>";
@@ -41,8 +41,5 @@
         </section>
       </main>
     </div>
-
-    
-    
 </body>
 </html>

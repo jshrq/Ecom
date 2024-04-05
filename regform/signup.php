@@ -117,6 +117,8 @@
     font-size: 15px;
   }
 
+  .button1 {background-color: #0F9ADA;}
+
   .button:hover {
     background-color: #00B3FF;
   }
@@ -188,7 +190,7 @@
                       </select>
                       <input class="input" type="date" name="bday" placeholder="Birthdate" required>
                     
-                      <h2>Student Email</h2>
+                      <h2>Email</h2>
                       <input class="input" type="email" name="email" placeholder="ex: juandelacruz@gmail.com" required>
                       <h2>Contact No.</h2>
                       <input class="input" type="text" name="contact" placeholder="Contact No." required>
@@ -205,9 +207,9 @@
                       <h2>Confirm Password</h2>
                       <input class="input" type="password" name="cpw" placeholder="Confirm Password" required>
 
-                      <button class="button" type="submit">Submit</button></a>
-
+                      <button class="button" type="submit">Submit</button>
                   </form>
+                  <a href="login.php"><button class="button button1" type="submit">Cancel</button></a>
               </section>
           </main>
 
@@ -216,5 +218,4 @@
     </footer>
   </div>  
 </body>
-
 </html>
