@@ -1,25 +1,16 @@
 <?php
-session_start();
+    session_start();
+    include('connect.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uname = $_POST['uname'];
     $pw = $_POST['pw'];
 
-    // Database connection details
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "firstconnection";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM student_table WHERE Username='$uname'";
+    $sql = "SELECT * FROM student_table WHERE Username = '$uname' AND Password = '$pw'";
     $result = mysqli_query($conn,$sql);
 
     if (mysqli_num_rows($result) != 0) {
@@ -29,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
     } 
     else {
-        $_SESSION['login_error'] = "Invalid username or password.";
-        header("Location: login.php");
+        echo "<script>alert('Incorrect username and password. Please try again.');
+        window.location = 'login.php'; </script>";
         exit();
     }
 

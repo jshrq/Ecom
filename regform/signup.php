@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  include('connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,21 +153,27 @@
               <h1>Registration Form</h1>
               <p>Fill out the form carefully for registration</p>
           </header>
+          <?php
+                if (isset($_SESSION['signup_error'])) {
+                    echo "<p class='error'>{$_SESSION['signup_error']}</p>";
+                    unset($_SESSION['signup_error']);
+                }
+                ?>
 
           <main>
               <section>
-                  <form action="form.php" method="POST">
+                  <form action="process_signup.php" method="POST">
                       <h2>Student Name</h2>
                       <input class="input" type="text" name="fname" placeholder="First Name" required>
                       <input class="input" type="text" name="mname" placeholder="Middle Name" required>
                       <input class="input" type="text" name="lname" placeholder="Last Name" required>
 
                       <div class="row">
-                          <h2>Student ID</h2>
+                          <h2>Student Number</h2>
                           <h2>Address</h2>
                       </div>
 
-                      <input class="input" type="text" name="id" placeholder="Student ID" required>
+                      <input class="input" type="text" name="stnum" placeholder="Student Number" required>
                       <input class="input" type="text" name="address" placeholder="Address" required>
 
                       <div class="row2">
@@ -195,7 +205,7 @@
                       <h2>Confirm Password</h2>
                       <input class="input" type="password" name="cpw" placeholder="Confirm Password" required>
 
-                      <a href='index.php'><button class="button" type="submit">Submit</button></a>
+                      <button class="button" type="submit">Submit</button></a>
 
                   </form>
               </section>
